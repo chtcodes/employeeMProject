@@ -1,45 +1,23 @@
-<p>roles works!</p>
 <div class="row">
-    <div class="col-3">
-        <p> {{firstName}}</p>
+    <div class="col-4">
+        <ul>
+            <li *ngFor="let item of roleList">
+                {{item.role}}
+            </li>
+        </ul>
     </div>
-    <div class="col-3">
-        <p>{{angularVersion}}</p>
-    </div>
-    <div class="col-3">
-        <p>{{currentDate}}</p>
-    </div>
-    <div class="col-3">
-        <p>{{selectedCity}}</p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-3">
-        <input type="text" class="form-control" [value]="firstName " /> 
-    </div>
-    
-    <div class="col-3">
-        <input  [type]="inputType" /> 
-    </div>
-
-    <div class="col-3">
-        <input type="text" class="form-control" [(ngModel)]="firstName " /> 
-    </div>
-
-    <div class="col-3">
-        <select [(ngModel)]="selectedCity" name="cities" id="cities">
-            <option value="Kegalle">Kegalle</option>
-            <option value="Galle">Galle</option>
-            <option value="Nawalapitiya">Nawalapitiya</option>
-            <option value="Ruwawella">Ruwanwella</option>
+    <div class="col-4">
+        <select >
+            <option *ngFor="let item of roleList" [value]="item.roleId" >
+                {{item.role}}
+            </option>
         </select>
     </div>
 </div>
 <div class="row">
-    <div class="col-3">
-        <button class="btn btn-success" (click)="showWelcomeAlert()">Show alert </button>
-    </div>
-    <div class="col-3">
-        <button class="btn btn-success" (click)="showMessage('Hello Cht!')">Show message </button>
+    <div class="col-4">
+        <button class="btn btn-warning mx-2" *ngFor="let item of roleList">
+            {{item.role}}
+        </button>
     </div>
 </div>
