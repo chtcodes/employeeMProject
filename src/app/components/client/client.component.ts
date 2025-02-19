@@ -67,4 +67,10 @@ export class ClientComponent implements OnInit{
   }
 
 
+  onEdit(clientObj : Client){
+    this.client = clientObj;
+    
+  }
+
+
 }

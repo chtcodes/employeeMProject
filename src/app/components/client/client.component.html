@@ -31,7 +31,7 @@
                                         <td>{{clientObj.employeeStrength}}</td>
                                         <td>{{clientObj.regNo}}</td>
                                         <td class="text-center">
-                                            <button class="btn btn-outline-secondary px-4 mb-1">
+                                            <button class="btn btn-outline-secondary px-4 mb-1" (click)="onEdit(clientObj)">
                                                 Edit   
                                             </button>
                                             <button class="btn btn-outline-danger" (click)="onDelete(clientObj.clientId)">
@@ -106,7 +106,9 @@
                         <button class="btn btn-secondary btn-block fs-5">Reset</button>
                     </div>
                     <div class="col-6 d-grid ">
-                        <button class="btn btn-success btn-block fs-5" (click)="onSaveClient()">Save client</button>
+                        <button class="btn btn-success btn-block fs-5" (click)="onSaveClient()">
+                           {{client.clientId!=0?'Update Client' : 'Save Client'}} 
+                        </button>
                     </div>
                 </div>
             </div>
