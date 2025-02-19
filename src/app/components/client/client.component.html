@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-8">
         <div class="card">
-            <div class="card-header bg-success">
-                Client List
+            <div class="card-header bg-success text-white fs-5">
+                Clients List
             </div>
             <div class="card-body">
                 <div class="row">
@@ -10,12 +10,25 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Serial No</th>
-                                    <th>Role Name</th>
+                                    <th>Contact person name</th>
+                                    <th>Company name</th>
+                                    <th>Contact number</th>
+                                    <th>Address</th>
+                                    <th>City</th>
+                                    <th>Employee strength</th>
+                                    <th>Reg No</th>
                                 </tr>
                             </thead>
                             <tbody>
-                               
+                               <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                               </tr>
                             </tbody>
                 
                         </table>
@@ -24,13 +37,66 @@
             </div>
         </div>
     </div>
+
+
     <div class="col-4">
         <div class="card">
-            <div class="card-header bg-success">
-                New Client
+            <div class="card-header bg-success text-white fs-5">
+                Create a 
+                new client
             </div>
             <div class="card-body">
-             card body
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label for="name" class="form-label" >Contact person name</label>
+                        <input type="text" class="form-control" [(ngModel)]="client.contactPersonName" >
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="name" class="form-label">Company name</label>
+                        <input type="text" class="form-control" [(ngModel)]="client.companyName">
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="name" class="form-label">Contact number</label>
+                        <input type="text" class="form-control" [(ngModel)]="client.contactNo">
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="name" class="form-label">Address</label>
+                        <textarea class="form-control" [(ngModel)]="client.address"></textarea>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="name" class="form-label">City</label>
+                        <input type="text" class="form-control" [(ngModel)]="client.city">
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="name" class="form-label">Zip code</label>
+                        <input type="text" class="form-control" [(ngModel)]="client.pincode">
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="name" class="form-label">State</label>
+                        <input type="text" class="form-control" [(ngModel)]="client.state">
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="name" class="form-label"> Employee strength</label>
+                        <input type="text" class="form-control" [(ngModel)]="client.employeeStrength">
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label for="name" class="form-label">Gst No</label>
+                        <input type="text" class="form-control" [(ngModel)]="client.gstNo">
+                    </div>
+                    
+                    <div class="col-6 mb-3">
+                        <label for="name" class="form-label">Reg No</label>
+                        <input type="text" class="form-control" [(ngModel)]="client.regNo">
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-6 d-grid">
+                        <button class="btn btn-secondary btn-block fs-5">Reset</button>
+                    </div>
+                    <div class="col-6 d-grid ">
+                        <button class="btn btn-success btn-block fs-5" (click)="onSaveClient()">Save client</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
