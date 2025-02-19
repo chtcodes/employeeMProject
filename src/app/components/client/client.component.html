@@ -7,28 +7,40 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
-                        <table class="table table-bordered">
-                            <thead>
+                        <table class="table table-bordered text-start align-middle ">
+                            <thead class="align-top text-center">
                                 <tr>
+                                    <th>Serial No</th>
                                     <th>Contact person name</th>
                                     <th>Company name</th>
                                     <th>Contact number</th>
-                                    <th>Address</th>
                                     <th>City</th>
                                     <th>Employee strength</th>
                                     <th>Reg No</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                               <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                               </tr>
+                                @for (clientObj of clientList; track $index) {
+                                    <tr>
+                                        <td>{{$index+1}}</td>
+                                        <td>{{clientObj.contactPersonName}}</td>
+                                        <td>{{clientObj.companyName}}</td>
+                                        <td>{{clientObj.contactNo}}</td>
+                                        <td>{{clientObj.city}}</td>
+                                        <td>{{clientObj.employeeStrength}}</td>
+                                        <td>{{clientObj.regNo}}</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-outline-secondary px-4 mb-1">
+                                                Edit   
+                                            </button>
+                                            <button class="btn btn-outline-danger" (click)="onDelete(clientObj.clientId)">
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                             
                             </tbody>
                 
                         </table>
