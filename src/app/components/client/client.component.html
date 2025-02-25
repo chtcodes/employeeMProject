@@ -1,8 +1,15 @@
+<ul>
+@for (item of userList$ | async ; track $index) {
+    <li>{{item.username}}</li>
+}
+</ul>
+<p>{{client | json}}</p>
 <div class="row">
     <div class="col-8">
         <div class="card">
+            
             <div class="card-header bg-success text-white fs-5">
-                Clients List
+                Clients List - {{ currentDate | date : 'dd-MMMM-yy'}}
             </div>
             <div class="card-body">
                 <div class="row">
@@ -24,7 +31,7 @@
                                 @for (clientObj of clientList; track $index) {
                                     <tr>
                                         <td>{{$index+1}}</td>
-                                        <td>{{clientObj.contactPersonName}}</td>
+                                        <td>{{clientObj.contactPersonName | uppercase}}</td>
                                         <td>{{clientObj.companyName}}</td>
                                         <td>{{clientObj.contactNo}}</td>
                                         <td>{{clientObj.city}}</td>

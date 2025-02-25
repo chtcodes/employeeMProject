@@ -4,6 +4,7 @@ import { CommonModule, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ClientService } from '../../services/client.service';
 import { IAPIResponseModel } from '../../model/interface/role';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-client',
@@ -17,9 +18,13 @@ export class ClientComponent implements OnInit{
   clientList : Client[] =  [];
   clientService = inject(ClientService);
 
+  currentDate: Date = new Date();
+
+  userList$ : Observable<any> = new Observable<any>;
 
   ngOnInit(): void {
     this.loadClients();
+    this.userList$ = this.clientService.getAllUsers();
   }
 
   loadClients(){
