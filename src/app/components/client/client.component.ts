@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Client } from '../../model/class/Client';
-import { CommonModule } from '@angular/common';
+import { CommonModule, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ClientService } from '../../services/client.service';
 import { IAPIResponseModel } from '../../model/interface/role';
@@ -8,7 +8,7 @@ import { IAPIResponseModel } from '../../model/interface/role';
 @Component({
   selector: 'app-client',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, UpperCasePipe],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css'
 })
