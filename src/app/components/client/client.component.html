@@ -1,9 +1,11 @@
-<ul>
+<!-- <ul>
 @for (item of userList$ | async ; track $index) {
     <li>{{item.username}}</li>
 }
 </ul>
-<p>{{client | json}}</p>
+<p>{{client | json}}</p> -->
+
+<app-alert [alertType]="'danger'" [message]="'Welcome to client page'"></app-alert>
 <div class="row">
     <div class="col-8">
         <div class="card">
@@ -126,9 +128,12 @@
                             <button class="btn btn-secondary btn-block fs-5">Reset</button>
                         </div>
                         <div class="col-6 d-grid ">
-                            <button class="btn btn-success btn-block fs-5" [disabled]="!form.valid" (click)="onSaveClient()">
+                            <app-my-button (onBtnClick)="onSaveClient($event)"  [btnClass]="'btn btn-dark'"  [btnText]="client.clientId!=0?'Update Client' : 'Save Client'"></app-my-button>
+
+
+                            <!-- <button class="btn btn-success btn-block fs-5" [disabled]="!form.valid" (click)="onSaveClient()">
                                {{client.clientId!=0?'Update Client' : 'Save Client'}} 
-                            </button>
+                            </button> -->
                         </div>
                     </div>
                 

@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { ClientService } from '../../services/client.service';
 import { IAPIResponseModel } from '../../model/interface/role';
 import { Observable } from 'rxjs';
+import { AlertComponent } from '../../reusableComponents/alert/alert.component';
+import { MyButtonComponent } from '../../reusableComponents/my-button/my-button.component';
 
 @Component({
   selector: 'app-client',
   standalone: true,
-  imports: [FormsModule, CommonModule, UpperCasePipe],
+  imports: [FormsModule, CommonModule, UpperCasePipe, AlertComponent, MyButtonComponent],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css'
 })
@@ -33,7 +35,7 @@ export class ClientComponent implements OnInit{
     });
   }
 
-  onSaveClient(){
+  onSaveClient(data: string){
     debugger;
     this.clientService.addClient(this.client).subscribe((res:IAPIResponseModel)=>{
       //if the API call is success

@@ -37,4 +37,8 @@ export class ClientService {
     return this.http.get("https://jsonplaceholder.typicode.com/users");
   }
 
+  getAllClientProjects(){
+    return this.http.get<IAPIResponseModel>(environment.API_URL + constant.API_METHOD.GET_ALL_PROJECTS);
+  }
+
 }
